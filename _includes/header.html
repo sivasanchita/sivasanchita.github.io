@@ -1,17 +1,15 @@
 <header class="site-header">
-  <div class="container">
-    <div class="masthead">
-      <a class="brand" href="{{ '/' | relative_url }}">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-text">
         <span class="brand-name">{{ site.header_name | default: site.title }}</span>
         <span class="brand-tagline">{{ site.tagline }}</span>
-      </a>
+      </span>
+    </a>
 
-      <a class="masthead-link" href="mailto:{{ site.email }}">Get in touch <span aria-hidden="true">&#8599;</span></a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        Menu
-      </button>
-    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      Menu
+    </button>
 
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ol>
@@ -24,7 +22,6 @@
         {% endif %}
         <li>
           <a href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>
-            <span class="nav-num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
             <span class="nav-label">{{ item.title }}</span>
           </a>
         </li>
