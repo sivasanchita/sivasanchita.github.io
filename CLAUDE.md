@@ -116,57 +116,51 @@ Never hard-code colours elsewhere.
 | Variable              | Value     | Use                                               |
 |-----------------------|-----------|---------------------------------------------------|
 | `--bg-page`           | `#F7F1E6` | Page background (warm paper)                      |
-| `--bg-card`           | `#EFE5D4` | Tinted bands, chips, highlighted sections (sand)  |
-| `--bg-dark`           | `#173E46` | Footer and dark bands (deep teal)                 |
-| `--bg-frame`          | `#FFFDF8` | White mat around framed photos                    |
-| `--color-primary`     | `#1B5E6B` | Headings, links, buttons (teal)                   |
-| `--color-accent`      | `#E8914A` | Lines, underlines, small details ONLY (apricot)   |
-| `--color-accent-text` | `#9A4A16` | Apricot for text on light backgrounds             |
-| `--color-text`        | `#1E2A2E` | Body text (ink)                                   |
-| `--color-muted`       | `#52636A` | Meta lines, captions, secondary text              |
+| `--bg-card`           | `#EFE5D4` | Chips, bands, footer, highlighted sections (sand) |
+| `--color-primary`     | `#9C3D1F` | Headings, links, buttons (terracotta)             |
+| `--color-accent`      | `#E8A93A` | Lines, underlines, small details ONLY (marigold)  |
+| `--color-accent-text` | `#7A4E00` | Deep gold for small text on light backgrounds     |
+| `--color-text`        | `#2B211C` | Body text (warm dark brown)                       |
+| `--color-muted`       | `#6B5B50` | Meta lines, captions, secondary text              |
 
-- **Fonts**: Lora (headings), Source Sans 3 (body). `font-display: swap`.
+- **Fonts**: Fraunces (headings), Lora italic (quotes and personal statements only,
+  so they never look like headings), Source Sans 3 (body). `font-display: swap`.
 - **Body text**: 18px, line-height ~1.7, max line length ~70 characters.
-- **Header**: name, line "Curiosity · Evidence · Impact", numbered nav
-  (01 About, 02 Journey, 03 Work & impact, 04 Opinions, 05 Skills, 06 Things I love).
-- **Footer**: dark band with name and tagline, "Vancouver, BC", LinkedIn, Substack,
-  "Get in touch" (mailto).
+- **Header**: name, line "Curiosity · Evidence · Impact", and a simple nav that reads
+  as one line, separated by dots, with no numbers: About · Journey · Work & impact ·
+  Opinions · Skills · Things I love.
+- **Footer**: soft sand band with "Get in touch" (mailto), LinkedIn, Substack, "Vancouver, BC".
 - **Style**: calm, lots of space, no gradients, glitter, or heavy animation.
   Subtle hover effects only.
 
-### Editorial / magazine style (the look of every section page)
+### Page style (how every section page looks)
 
-The site reads like a printed magazine or newspaper feature. When adding or changing
-a page, keep to these patterns (all styles already exist in `style.css`):
+Keep to these patterns when adding or changing a page (all styles exist in `style.css`):
 
-- **Masthead header**: name and small-caps tagline on the left, "Get in touch ↗" on
-  the right, and the numbered nav running full width between two hairline rules.
-- **Page opening** (handled by `_layouts/page.html` from front matter):
-  small ornament (rule ✦ rule) → eyebrow `05 / Skills` → big two-line serif headline
-  (`headline: ["Line one", "line two."]`) → one muted lead sentence (`lead:`).
-  Optional framed photo beside the headline with `intro_photo:` (see Things I love).
-- **Rules, not boxes**: separate things with thin hairline rules and white space.
-  No filled cards or rounded coloured boxes. A full-width tinted band (`.band`)
-  can alternate with plain sections to give rhythm.
-- **Stats row** (`.stats.stats-row`): big serif numbers divided by vertical rules,
-  followed by "jump to" links (`.jump-links`) where a page is long.
+- **Header**: name and tagline on the left, dot-separated nav on the right. No logo or
+  symbol (a three-circle mark was tried and dropped: too close to the ABCs logo).
+  Mobile: Menu button.
+- **Page opening** (handled by `_layouts/page.html` from front matter): big serif
+  headline (`headline: ["Line one", "line two."]`) with a short marigold bar under it,
+  then one muted lead sentence (`lead:`). Optional feature photo beside it with
+  `intro_photo:` (see Things I love).
+- **Light structure**: thin hairline rules and white space between items; soft sand
+  (`--bg-card`) for chips, bands and the footer. A full-width tinted band (`.band`)
+  can alternate with plain sections.
+- **Photos**: rounded corners and a soft shadow. No coloured blocks behind photos.
+  Gallery thumbnails get a sand border that turns marigold on hover. The home About
+  photo scrolls with the About text but stops before "What I bring" (separate section).
 - **Journey is a single timeline** (`.timeline`): date, role, organization, short
-  text, then that period's posts and photos. Sanchita prefers how it flows over
-  a chapter layout.
-- **Chapters** (`.chapter`, available but not currently used): eyebrow + heading + one-line blurb in
-  a sticky left column; entries on the right, each with a muted meta line
-  (organization · place · dates), serif title, short paragraph, and an apricot
-  keyword line (`.tag-line`), then posts and photos.
-- **Numbered grid** (`.num-grid`, used on Skills): two columns, apricot serif
-  number, heading, short text, a rule, keyword line, then "in practice" links.
+  text, then that period's posts and photos.
+- **Skills**: "Top skills" as terracotta chips, then one row per area (`.skill-row`):
+  name and keyword chips on the left, description and "Where I've used it" links
+  on the right. No numbering.
+- **Section intros** (`.section-intro`): small eyebrow, sentence-case serif heading,
+  one muted sentence.
+- **Every section page ends** with an "Up next" link to the next page (automatic).
 - **Captions are optional.** Don't add a caption just to fill space.
-- **Photos are framed prints** (`.frame`, `.gallery-item`): white mat, soft
-  shadow, square corners. A slight tilt (`.frame-tilt`) only for one hero photo.
-- **Section intros** (`.section-intro`): small-caps eyebrow, sentence-case serif
-  heading ending in a full stop ("On my bookshelf."), one muted sentence.
-- **Every section page ends** with "Continue exploring → next page" (automatic).
-- Headlines, eyebrows and blurbs are written from Sanchita's own content —
-  never invent facts to fill a layout.
+- Headlines and blurbs are written from Sanchita's own content — never invent facts
+  to fill a layout.
 
 ### Things I love content
 
@@ -260,5 +254,8 @@ Record significant decisions here (date — decision — reason).
 - 2026-09-24 — Home headline changed to Martin Luther King Jr.'s "inescapable network of mutuality" (Letter from Birmingham Jail, 1963), replacing Senge — Sanchita's choice.
 - 2026-09-24 — Headline changed to Audre Lorde, "There is no such thing as a single-issue struggle…" ("Learning from the 60s", 1982). About section rebuilt from the first draft: access to care, resilient communities, 4+ years, listening-first and relationship-based approach.
 - 2026-09-24 — No "Dr." title or post-nominals (BDS, MPH) in the header or hero — Sanchita's final choice. Hero reads "Hi, I'm Sanchita."
-- 2026-09-24 — Editorial / magazine redesign (Sanchita's request, inspired by the layout of a peer's site; no content or images copied): warm paper background, masthead header, big two-line serif headlines, hairline rules instead of filled cards, framed photos, dark footer, "Continue exploring" links. Journey became three chapters; Skills a numbered grid; Things I love reads from `_data/love.yml`. Palette table updated (sage mist background replaced by warm paper; teal and apricot kept).
+- 2026-09-24 — Section pages restyled: big two-line serif headlines, hairline rules instead of filled cards, "next page" link at the end of each page. Skills got a structured layout; Things I love reads from `_data/love.yml`.
 - 2026-09-24 — Journey reverted to the single timeline (restyled to match), chapters dropped — Sanchita: the timeline flowed better. Things I love hero photo is the rainy beach umbrella photo, no caption.
+- 2026-09-24 — Design made more distinctly Sanchita's own: back to the sage mist palette, three-circle brand mark (curiosity, evidence, impact — "where things intersect"), nav beside the name, no ornament or numbered page labels, offset apricot photo blocks, "Up next" page links, Skills as rows with top-skill chips, sand footer.
+- 2026-09-24 — Sanchita's feedback: warm paper background back (sage mist rejected), no apricot blocks behind photos, three-circle mark removed (looked like the ABCs logo). "What I bring" moved into its own section so the sticky About photo can't cover it.
+- 2026-09-24 — Colours: terracotta + marigold on warm paper (Sanchita's pick, "warmth and sunshine"; replaces teal + apricot, which was too close to another site). Fonts: Fraunces for headings, Lora italic for quotes/statements. Nav numbers removed. Home "A little about me" became a small "About me" label with the statement as a pull quote. Opinions shows the upcoming piece, "The stories we tell ourselves".

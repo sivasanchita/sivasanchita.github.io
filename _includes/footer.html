@@ -1,16 +1,12 @@
 <footer class="site-footer">
   <div class="container footer-inner">
-    <a class="brand" href="{{ '/' | relative_url }}">
-      <span class="brand-name">{{ site.header_name | default: site.title }}</span>
-      <span class="brand-tagline">{{ site.tagline }}</span>
-    </a>
-
-    <p class="footer-location">{{ site.location }}</p>
+    <a class="button" href="mailto:{{ site.email }}">Get in touch</a>
 
     <ul class="footer-links">
-      <li><a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">&#8599;</span></a></li>
-      <li><a href="{{ site.substack.url }}" target="_blank" rel="noopener noreferrer">Substack ({{ site.substack.name }}) <span aria-hidden="true">&#8599;</span></a></li>
-      <li><a href="mailto:{{ site.email }}">Get in touch <span aria-hidden="true">&#8599;</span></a></li>
+      <li><a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="{{ site.substack.url }}" target="_blank" rel="noopener noreferrer">Substack ({{ site.substack.name }})</a></li>
     </ul>
+
+    <p class="footer-location">{{ site.location }}</p>
   </div>
 </footer>
