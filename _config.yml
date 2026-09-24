@@ -1,0 +1,73 @@
+# Site settings
+title: Sanchita Sivaraman
+tagline: "Curiosity · Evidence · Impact"
+description: "Health systems and policy analyst in Vancouver, BC — systems thinking, program evaluation and community partnership to improve access to care."
+location: "Vancouver, BC"
+url: "https://sivasanchita.github.io"
+baseurl: ""
+lang: en-CA
+locale: en_CA
+
+author:
+  name: Sanchita Sivaraman
+
+# Default image for social-media link previews (add this file later)
+# image: /assets/images/social-share.png
+
+# Contact & links (used in the footer). Only approved contact details — see CLAUDE.md §3.
+email: sivasanchita@gmail.com
+linkedin: https://www.linkedin.com/in/drsanchitasivaraman/
+substack:
+  name: Dear Sancho
+  url: https://substack.com/@dearsancho
+instagram:
+  handle: your_travel_buddy_forever
+  url: https://www.instagram.com/your_travel_buddy_forever/
+
+# Main navigation (numbered automatically in the order listed)
+nav:
+  - title: About
+    url: /
+  - title: Journey
+    url: /journey/
+  - title: Work & impact
+    url: /work/
+  - title: Opinions
+    url: /opinions/
+  - title: Skills
+    url: /skills/
+  - title: Things I love
+    url: /things-i-love/
+
+# Plugins (all supported by GitHub Pages)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Posts (shown under Opinions): pretty web addresses
+permalink: /opinions/:year/:title/
+
+# Default layouts, so front matter can stay short
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: "pages"
+    values:
+      layout: page
+
+# Build settings
+theme: null  # no GitHub Pages default theme; this site uses its own layouts and CSS
+markdown: kramdown
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - "LikedIN Profile.pdf"

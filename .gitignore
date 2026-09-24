@@ -1,0 +1,12 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/
+.DS_Store
+.env
+*.log
+
+# Private source documents — never commit
+LikedIN Profile.pdf

@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<article class="page">
+  <div class="ornament" aria-hidden="true"><span></span><span class="ornament-mark">&#10022;</span><span></span></div>
+
+  <header class="page-intro{% if page.intro_photo %} page-intro-photo{% endif %}">
+    <div>
+      {% if page.number %}<p class="eyebrow">{{ page.number }} / {{ page.title }}</p>{% endif %}
+      <h1 class="display">
+        {%- if page.headline -%}
+          {%- for line in page.headline -%}<span class="display-line">{{ line }}</span>{% unless forloop.last %} {% endunless %}{%- endfor -%}
+        {%- else -%}
+          {{ page.title }}
+        {%- endif -%}
+      </h1>
+      {% if page.lead %}<p class="page-lead">{{ page.lead }}</p>{% endif %}
+    </div>
+    {%- if page.intro_photo %}
+    <figure class="frame frame-tilt">
+      <img src="{{ page.intro_photo.src | relative_url }}" alt="{{ page.intro_photo.alt }}" width="{{ page.intro_photo.width }}" height="{{ page.intro_photo.height }}">
+      {% if page.intro_photo.caption %}<figcaption>{{ page.intro_photo.caption }}</figcaption>{% endif %}
+    </figure>
+    {%- endif %}
+  </header>
+
+  {{ content }}
+
+  {%- comment -%} "Continue exploring": link to the next page in the nav {%- endcomment -%}
+  {%- assign next_index = nil -%}
+  {%- for item in site.nav -%}
+    {%- if item.url == page.url -%}{%- assign next_index = forloop.index -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if next_index -%}
+    {%- if next_index >= site.nav.size -%}{%- assign next_index = 0 -%}{%- endif -%}
+    {%- assign next_page = site.nav[next_index] %}
+  <nav class="next-page" aria-label="Next page">
+    <span class="eyebrow">Continue exploring</span>
+    <a href="{{ next_page.url | relative_url }}">{{ next_page.title }} <span aria-hidden="true">&#8594;</span></a>
+  </nav>
+  {%- endif %}
+</article>
