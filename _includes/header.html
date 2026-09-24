@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="container">
+    <div class="masthead">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand-name">{{ site.header_name | default: site.title }}</span>
+        <span class="brand-tagline">{{ site.tagline }}</span>
+      </a>
+
+      <a class="masthead-link" href="mailto:{{ site.email }}">Get in touch <span aria-hidden="true">&#8599;</span></a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+    </div>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ol>
+        {% for item in site.nav %}
+        {% assign url_start = page.url | slice: 0, item.url.size %}
+        {% if page.url == item.url or item.url != "/" and url_start == item.url %}
+          {% assign current = true %}
+        {% else %}
+          {% assign current = false %}
+        {% endif %}
+        <li>
+          <a href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>
+            <span class="nav-num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+            <span class="nav-label">{{ item.title }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ol>
+    </nav>
+  </div>
+</header>

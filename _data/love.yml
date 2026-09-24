@@ -1,0 +1,32 @@
+# Things I love: content for pages/things-i-love.html
+# Add items to a list below and the page fills itself in. Empty lists show "coming soon".
+
+# Travel photos. Save each photo in assets/images/travel/ as .webp,
+# with location (GPS/EXIF) data removed first.
+#   - image: /assets/images/travel/example.webp
+#     width: 900
+#     height: 1200
+#     alt: "What the photo shows, for people who can't see it"
+#     title: "A short caption title"
+#     place: "City, Country"
+travel: []
+
+# Books. The cover image is optional: without one, a printed-style cover
+# is drawn in the site colours.
+#   - title: "Book title"
+#     author: "Author name"
+#     url: https://www.goodreads.com/book/show/...   # optional
+#     cover: /assets/images/books/example.webp   # optional
+books:
+  - title: "Thinking, Fast and Slow"
+    author: "Daniel Kahneman"
+    url: https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow
+    cover: /assets/images/books/thinking-fast-and-slow.webp
+  - title: "The Midnight Library"
+    author: "Matt Haig"
+    url: https://www.goodreads.com/book/show/52578297-the-midnight-library
+    cover: /assets/images/books/the-midnight-library.webp
+  - title: "Invisible Women: Data Bias in a World Designed for Men"
+    author: "Caroline Criado Perez"
+    url: https://www.goodreads.com/book/show/41104077-invisible-women
+    cover: /assets/images/books/invisible-women.webp

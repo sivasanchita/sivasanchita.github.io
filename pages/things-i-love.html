@@ -1,0 +1,78 @@
+---
+title: "Things I love"
+number: "06"
+description: "Away from work: travel, cooking, reading, and still figuring out life."
+headline: ["Life away", "from work."]
+lead: "Travel, cooking, a good book, and figuring out life as I go. A few of the things I love away from work."
+intro_photo:
+  src: /assets/images/beach-umbrella.webp
+  alt: "Sanchita smiling under a clear umbrella on a pebble beach on a grey, rainy day"
+  width: 1024
+  height: 768
+permalink: /things-i-love/
+---
+{%- comment -%} Travel photos and books come from _data/love.yml {%- endcomment -%}
+<section class="love-section" aria-labelledby="travel-title">
+  <div class="section-intro">
+    <p class="eyebrow">Travel</p>
+    <h2 id="travel-title">One trip at a time.</h2>
+    <p>Exploring new places, one trip at a time. I share my travels on Instagram at <a href="{{ site.instagram.url }}" target="_blank" rel="noopener noreferrer">@{{ site.instagram.handle }}</a>.</p>
+  </div>
+  {% if site.data.love.travel.size > 0 %}
+  <div class="travel-gallery">
+    {% for photo in site.data.love.travel %}
+    <figure class="frame">
+      <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy">
+      <figcaption>
+        <h3>{{ photo.title }}</h3>
+        <p>{{ photo.place }}</p>
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="coming-soon">Photos from my travels are coming soon.</p>
+  {% endif %}
+</section>
+
+<section class="love-section band" aria-labelledby="books-title">
+  <div class="section-intro">
+    <p class="eyebrow">Reading</p>
+    <h2 id="books-title">On my bookshelf.</h2>
+    <p>I love a good book. These are on my current bookshelf.</p>
+  </div>
+  {% if site.data.love.books.size > 0 %}
+  <ul class="book-grid">
+    {% for book in site.data.love.books %}
+    <li>
+      {% if book.url %}<a href="{{ book.url }}" target="_blank" rel="noopener noreferrer">{% endif %}
+        {% if book.cover %}
+        <div class="book-cover"><img src="{{ book.cover | relative_url }}" alt="Cover of {{ book.title }}" width="318" height="472" loading="lazy"></div>
+        {% else %}
+        <div class="book-cover book-cover-print" aria-hidden="true"><span>{{ book.title }}</span><small>{{ book.author }}</small></div>
+        {% endif %}
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.author }}</p>
+        {% if book.url %}<p class="book-link">On Goodreads <span aria-hidden="true">&#8599;</span></p>{% endif %}
+      {% if book.url %}</a>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="coming-soon">A list of books I'd recommend is on its way.</p>
+  {% endif %}
+</section>
+
+<section class="pleasures" aria-labelledby="pleasures-title">
+  <h2 id="pleasures-title">And always room for&hellip;</h2>
+  <div class="pleasures-grid">
+    <article>
+      <h3>Cooking</h3>
+      <p>I love to cook. Some favourite recipes are coming soon.</p>
+    </article>
+    <article>
+      <h3>Still figuring out life</h3>
+      <p>And honestly? I'm still figuring out life, and that's part of the fun.</p>
+    </article>
+  </div>
+</section>
