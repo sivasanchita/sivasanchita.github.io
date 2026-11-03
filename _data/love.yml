@@ -30,3 +30,10 @@ books:
     author: "Caroline Criado Perez"
     url: https://www.goodreads.com/book/show/41104077-invisible-women
     cover: /assets/images/books/invisible-women.webp
+
+# Audiobooks and podcasts (optional; shown under the books when filled in)
+#   - title: "Title"
+#     creator: "Author or host"
+#     kind: audiobook   # or: podcast
+#     url: https://...   # optional
+listening: []

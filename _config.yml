@@ -21,22 +21,18 @@ substack:
   name: Dear Sancho
   url: https://substack.com/@dearsancho
 instagram:
-  handle: your_travel_buddy_forever
-  url: https://www.instagram.com/your_travel_buddy_forever/
+  handle: dearsancho
+  url: https://www.instagram.com/dearsancho/
 
 # Main navigation (numbered automatically in the order listed)
 nav:
-  - title: About
-    url: /
   - title: Journey
-    url: /journey/
+    url: /
+  - title: About me
+    url: /about/
   - title: Work & impact
     url: /work/
-  - title: Opinions
-    url: /opinions/
-  - title: Skills
-    url: /skills/
-  - title: Things I love
+  - title: Beyond work
     url: /things-i-love/
 
 # Plugins (all supported by GitHub Pages)

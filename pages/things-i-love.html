@@ -1,22 +1,37 @@
 ---
-title: "Things I love"
+title: "Beyond work"
 number: "06"
-description: "Away from work: travel, cooking, reading, and still figuring out life."
+description: "Beyond work: writing, travel, hikes, nature, recipes, books, audiobooks and podcasts, and still figuring out life."
+eyebrow: "Learning, unlearning, becoming"
 headline: ["Life away", "from work."]
-lead: "Travel, cooking, a good book, and figuring out life as I go. A few of the things I love away from work."
+lead: "Travel, hikes, nature, new recipes, a good book or a podcast, and figuring out life as I go. A few of the things I love are below."
 intro_photo:
-  src: /assets/images/beach-umbrella.webp
-  alt: "Sanchita smiling under a clear umbrella on a pebble beach on a grey, rainy day"
-  width: 1024
-  height: 768
+  src: /assets/images/travel/hike-mountain-lake.webp
+  alt: "Sanchita, seen from behind, standing at the edge of a turquoise mountain lake with snow-capped peaks and evergreen forest ahead"
+  width: 900
+  height: 1198
 permalink: /things-i-love/
 ---
 {%- comment -%} Travel photos and books come from _data/love.yml {%- endcomment -%}
+<section class="love-section" aria-labelledby="voice-title">
+  <div class="section-intro">
+    <p class="eyebrow">Writing</p>
+    <h2 id="voice-title">Figuring out my voice.</h2>
+    <p>Writing is how I'm learning, unlearning and becoming, as I figure out my voice. I share it on my Substack, <em>{{ site.substack.name }}</em>.</p>
+  </div>
+  <div class="upcoming" aria-labelledby="upcoming-title">
+    <p class="eyebrow">Coming next</p>
+    <h3 id="upcoming-title">Truth and reconciliation: what it means to me</h3>
+    <p class="upcoming-dek">A personal reflection from someone who grew up in India and is learning Canada's Indigenous history.</p>
+  </div>
+  <p class="button-row"><a class="button" href="{{ site.substack.url }}" target="_blank" rel="noopener noreferrer">Read {{ site.substack.name }}</a></p>
+</section>
+
 <section class="love-section" aria-labelledby="travel-title">
   <div class="section-intro">
-    <p class="eyebrow">Travel</p>
-    <h2 id="travel-title">One trip at a time.</h2>
-    <p>Exploring new places, one trip at a time. I share my travels on Instagram at <a href="{{ site.instagram.url }}" target="_blank" rel="noopener noreferrer">@{{ site.instagram.handle }}</a>.</p>
+    <p class="eyebrow">Travel and hikes</p>
+    <h2 id="travel-title">One trip, one trail at a time.</h2>
+    <p>I'm obsessed with nature, I love exploring new places, and I love trying new recipes. Travel, hikes and all of it live on my Instagram, <a href="{{ site.instagram.url }}" target="_blank" rel="noopener noreferrer">@{{ site.instagram.handle }}</a>.</p>
   </div>
   {% if site.data.love.travel.size > 0 %}
   <div class="travel-gallery">
@@ -25,21 +40,20 @@ permalink: /things-i-love/
       <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy">
       <figcaption>
         <h3>{{ photo.title }}</h3>
-        <p>{{ photo.place }}</p>
+        {%- if photo.place != "" %}<p>{{ photo.place }}</p>{% endif %}
       </figcaption>
     </figure>
     {% endfor %}
   </div>
-  {% else %}
-  <p class="coming-soon">Photos from my travels are coming soon.</p>
   {% endif %}
+  <p class="button-row"><a class="button" href="{{ site.instagram.url }}" target="_blank" rel="noopener noreferrer">Follow along on Instagram</a></p>
 </section>
 
 <section class="love-section band" aria-labelledby="books-title">
   <div class="section-intro">
-    <p class="eyebrow">Reading</p>
-    <h2 id="books-title">What I'm reading.</h2>
-    <p>I love a good book. These are on my current bookshelf.</p>
+    <p class="eyebrow">Reading and listening</p>
+    <h2 id="books-title">What I'm reading and listening to.</h2>
+    <p>Books, audiobooks and podcasts. These are on my current bookshelf.</p>
   </div>
   {% if site.data.love.books.size > 0 %}
   <ul class="book-grid">
@@ -59,20 +73,14 @@ permalink: /things-i-love/
     {% endfor %}
   </ul>
   {% else %}
-  <p class="coming-soon">A list of books I'd recommend is on its way.</p>
+  <p class="coming-soon">A list of books, audiobooks and podcasts I'd recommend is on its way.</p>
   {% endif %}
-</section>
-
-<section class="pleasures" aria-labelledby="pleasures-title">
-  <h2 id="pleasures-title">A few more things I love</h2>
-  <div class="pleasures-grid">
-    <article>
-      <h3>Cooking</h3>
-      <p>I love to cook. Some favourite recipes are coming soon.</p>
-    </article>
-    <article>
-      <h3>Still figuring out life</h3>
-      <p>And honestly? I'm still figuring out life, and that's part of the fun.</p>
-    </article>
-  </div>
+  {% if site.data.love.listening.size > 0 %}
+  <h3 class="listening-title">On my headphones</h3>
+  <ul class="crisp-list listening-list">
+    {% for item in site.data.love.listening %}
+    <li>{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}{% if item.creator %} · {{ item.creator }}{% endif %}{% if item.kind %} <span class="pub-meta">({{ item.kind }})</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 </section>
