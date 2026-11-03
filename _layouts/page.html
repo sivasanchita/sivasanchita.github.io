@@ -4,6 +4,7 @@ layout: default
 <article class="page">
   <header class="page-intro{% if page.intro_photo %} page-intro-photo{% endif %}">
     <div>
+      {%- if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
       <h1 class="display">
         {%- if page.headline -%}
           {%- for line in page.headline -%}<span class="display-line">{{ line }}</span>{% unless forloop.last %} {% endunless %}{%- endfor -%}

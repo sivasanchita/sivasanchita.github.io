@@ -9,7 +9,7 @@ with these rules, stop and ask Sanchita before doing anything.
 ## 1. What this project is
 
 - Personal website for **Sanchita Sivaraman**, public health professional in Vancouver, BC.
-- Purpose: a **virtual CV** (journey, work, skills, photos) and a **home for writing**
+- Purpose: a **virtual CV** (journey, work, photos) and a **home for writing**
   (opinion pieces and reflections). Connected to her Substack, *Dear Sancho*.
 - Audience: hiring managers, collaborators, community partners, and readers.
 - Tone: warm, welcoming, reflective, curious, polished. Not flashy.
@@ -42,7 +42,7 @@ Deleting a file later does NOT remove it from history. So:
 - **Never add**: phone numbers, home address, ID numbers, passwords, API keys, tokens,
   or any secret. If one ever appears in a file, stop and tell Sanchita immediately.
 - **Only approved contact details**: email `sivasanchita@gmail.com`, LinkedIn, Substack, and
-  Instagram `@your_travel_buddy_forever` (travel, on "Things I love" only).
+  Instagram `@dearsancho` (travel, hikes and nature, on "Things I love" only).
 - **No confidential or employer-owned material**: no internal documents, datasets,
   client, patient, or participant information. Only publicly available work and
   Sanchita's own assignments that she has confirmed are fine to share.
@@ -93,13 +93,13 @@ vendor/
 ├── _config.yml           ← site settings (title, description, URL, plugins)
 ├── Gemfile               ← github-pages gem
 ├── .gitignore
-├── index.html            ← home / About
+├── index.html            ← home / Journey (headline, numbers, timeline)
 ├── 404.html              ← friendly not-found page
 ├── _layouts/             ← default.html, page.html, post.html
 ├── _includes/            ← header.html, footer.html, head.html
 ├── _data/love.yml        ← travel photos and books for "Things I love"
 ├── _posts/               ← published writing (YYYY-MM-DD-title.md)
-├── pages/                ← journey, work, opinions, skills, things-i-love
+├── pages/                ← about, work, things-i-love ("Beyond work" in the nav)
 └── assets/
     ├── css/style.css
     ├── images/           ← compressed, EXIF-stripped images only
@@ -117,7 +117,8 @@ Never hard-code colours elsewhere.
 |-----------------------|-----------|---------------------------------------------------|
 | `--bg-page`           | `#F7F1E6` | Page background (warm paper)                      |
 | `--bg-card`           | `#EFE5D4` | Chips, bands, footer, highlighted sections (sand) |
-| `--color-primary`     | `#9C3D1F` | Headings, links, buttons (terracotta)             |
+| `--color-heading`     | `#1B5E6B` | Name, headlines, headings, big numbers (teal)     |
+| `--color-primary`     | `#9C3D1F` | Buttons, links, quotes, statements (terracotta)   |
 | `--color-accent`      | `#E8A93A` | Lines, underlines, small details ONLY (marigold)  |
 | `--color-accent-text` | `#7A4E00` | Deep gold for small text on light backgrounds     |
 | `--color-text`        | `#2B211C` | Body text (warm dark brown)                       |
@@ -127,8 +128,8 @@ Never hard-code colours elsewhere.
   so they never look like headings), Source Sans 3 (body). `font-display: swap`.
 - **Body text**: 18px, line-height ~1.7, max line length ~70 characters.
 - **Header**: name, line "Curiosity · Evidence · Impact", and a simple nav that reads
-  as one line, separated by dots, with no numbers: About · Journey · Work & impact ·
-  Opinions · Skills · Things I love.
+  as one line, separated by dots, with no numbers: Journey · About · Work & impact ·
+  Beyond work.
 - **Footer**: soft sand band with "Get in touch" (mailto), LinkedIn, Substack, "Vancouver, BC".
 - **Style**: calm, lots of space, no gradients, glitter, or heavy animation.
   Subtle hover effects only.
@@ -250,7 +251,7 @@ Record significant decisions here (date — decision — reason).
 - 2026-09-24 — Anyone other than Sanchita in a photo gets their face fully pixelated and blurred (patients, community members, event attendees). Photos of children in clinical settings are left out unless a guardian has consented.
 - 2026-09-24 — Exception: event photos already posted publicly (e.g. CESBC 2024 on LinkedIn) where other people are incidental audience can be used unblurred — Sanchita's decision. Patients and community members are still always blurred.
 - 2026-09-24 — Logos removed from Journey (too small to read beside the timeline); organization names link to their websites instead. Design direction: visual first — photos and posts lead, text stays crisp.
-- 2026-09-24 — No employer-sensitive detail on the site (funding amounts, funder names for internal projects, land use work, national adoption claims) — fine on the CV, not on a public page. Home page stays professional: no theory sections or framework diagrams.
+- 2026-09-24 — No employer-sensitive detail on the site (internal figures and funding details) — fine on the CV, not on a public page. Home page stays professional: no theory sections or framework diagrams.
 - 2026-09-24 — Home headline changed to Martin Luther King Jr.'s "inescapable network of mutuality" (Letter from Birmingham Jail, 1963), replacing Senge — Sanchita's choice.
 - 2026-09-24 — Headline changed to Audre Lorde, "There is no such thing as a single-issue struggle…" ("Learning from the 60s", 1982). About section rebuilt from the first draft: access to care, resilient communities, 4+ years, listening-first and relationship-based approach.
 - 2026-09-24 — No "Dr." title or post-nominals (BDS, MPH) in the header or hero — Sanchita's final choice. Hero reads "Hi, I'm Sanchita."
@@ -259,3 +260,9 @@ Record significant decisions here (date — decision — reason).
 - 2026-09-24 — Design made more distinctly Sanchita's own: back to the sage mist palette, three-circle brand mark (curiosity, evidence, impact — "where things intersect"), nav beside the name, no ornament or numbered page labels, offset apricot photo blocks, "Up next" page links, Skills as rows with top-skill chips, sand footer.
 - 2026-09-24 — Sanchita's feedback: warm paper background back (sage mist rejected), no apricot blocks behind photos, three-circle mark removed (looked like the ABCs logo). "What I bring" moved into its own section so the sticky About photo can't cover it.
 - 2026-09-24 — Colours: terracotta + marigold on warm paper (Sanchita's pick, "warmth and sunshine"; replaces teal + apricot, which was too close to another site). Fonts: Fraunces for headings, Lora italic for quotes/statements. Nav numbers removed. Home "A little about me" became a small "About me" label with the statement as a pull quote. Opinions shows the upcoming piece, "The stories we tell ourselves".
+- 2026-09-24 — Teal + terracotta mix (Sanchita: teal headings looked better): teal for name, headlines, headings and big numbers; terracotta for buttons, links, quotes and statements; marigold for lines.
+- 2026-11-02 — Journey is now the home page (`/`) and About moved to `/about/` — first impression is the journey headline, the numbers and highlights; "See examples of my work" links to Work & impact. Positioning is community-based researcher (5+ years, health and social impact sector). About gained a values section (community connection, upstream prevention, evidence-informed decisions — third value to be confirmed by Sanchita), a "what's next" section and the generalist quote. Old `/journey/` URL no longer exists.
+- 2026-11-02 — Skills page removed (nav and page) — skills are communicated through Work & impact instead. "Proof of my work" (one card per report, each linked to the original) lives at the bottom of Work & impact, not on its own page. Stats on Home and Work are the same four: 150+, 30+, 10+, 70.
+- 2026-11-02 — Opinions: next piece is "Truth and reconciliation, and what it means to me"; links to Dear Sancho on Substack. Things I love: travel and hikes link to Instagram (nature and recipes live there too), "Reading and listening" covers books, audiobooks and podcasts; separate cooking/"figuring out life" cards dropped.
+- 2026-11-02 — Instagram changed to `@dearsancho` (replaces `@your_travel_buddy_forever`) — Sanchita: "that's more me". Substack link moved off Opinions into Things I love ("Figuring out my voice"); still in the footer. No Instagram embed or widget (third-party script) — photos, if used, are saved locally with location data removed and link back to the post.
+- 2026-11-02 — Opinions page removed; "Things I love" renamed "Beyond work" in the nav (URL stays `/things-i-love/`). It opens with "Figuring out my voice" (Dear Sancho on Substack, with the upcoming truth and reconciliation piece), then travel and hikes, then reading and listening.
